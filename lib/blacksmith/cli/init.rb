@@ -1,6 +1,6 @@
 
 class Blacksmith::Cli
-  desc 'init'
+  desc 'init', 'create project directory'
   def init
   end
 end

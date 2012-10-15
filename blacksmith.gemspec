@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description = "build js library, extensions with blacksmith"
   s.authors     = ["Eugene Varlamov"]
   s.email       = 'varlamoved@gmail.com'
-  s.files       = ["lib/blacksmith.rb", 'lib/blacksmith/cli.rb']
+  s.files       = `git ls-files`.split("\n")
   s.homepage    = 'http://varlamoved.ru/blacksmith'
   s.executables << 'blacksmith'
   s.add_dependency("listen", ["~> 0.4.7"])

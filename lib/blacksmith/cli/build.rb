@@ -1,6 +1,6 @@
 
 class Blacksmith::Cli
-  desc 'build'
+  desc 'build', 'build files'
   def build
   end
 end

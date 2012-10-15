@@ -1,6 +1,6 @@
 
 class Blacksmith::Cli
-  desc 'watch'
+  desc 'watch', 'watch & rebuild files'
   def watch
   end
 end
