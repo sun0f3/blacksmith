@@ -1,13 +1,16 @@
+require 'blacksmith/cli'
+require 'blacksmith/configure'
+
 module Blacksmith
-  def self.hello
-    'hello world'
-  end
 
   class << self
-    def configure
-      @config = Blacksmith::Configure.new
+    def config
+      @config ||= Blacksmith::Configure.new
+    end
+
+    def app
+      @app ||= Blacksmith::Application.new
     end
   end
 end
 
-require 'blacksmith/cli'

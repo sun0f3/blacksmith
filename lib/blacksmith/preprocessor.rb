@@ -1,11 +1,12 @@
 module Blacksmith
   class Preprocessor
+
     class << self
-      attr_accessor :env
-      def config
-        yield self if block_given?
-        self
+
+      def get_file(path)
+        File.open("#{Blacksmith.app.root}#{path}.js")
       end
+
 
       def proccess(file)
         input_file = file.readlines
@@ -21,7 +22,7 @@ module Blacksmith
               get_file(include_arg).read
             when /if_env/
               env = line.match(/if_env\s+(.*)/)[1].strip
-              if @env == env
+              if Blacksmith.config.env == env
                 line
               else
                 ''
@@ -39,10 +40,6 @@ module Blacksmith
 
   class CommandShell
     class << self
-      attr_accessor :prefix
-      def config
-        yield self
-      end
 
       def parse(line)
         nil or Object
