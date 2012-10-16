@@ -1,5 +1,7 @@
 require 'blacksmith/cli'
 require 'blacksmith/configure'
+require 'blacksmith/application'
+require 'blacksmith/preprocessor'
 
 module Blacksmith
 

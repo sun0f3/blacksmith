@@ -3,7 +3,7 @@ module Blacksmith
     attr_accessor :build_files
 
     def initialize
-
+      exec_config_file
     end
 
 
@@ -18,6 +18,14 @@ module Blacksmith
 
     def build_folder
       Blacksmith.app.root + '/build'
+    end
+    def source_folder
+      Blacksmith.app.root + '/source'
+    end
+
+
+    def env
+      :production
     end
   end
 end

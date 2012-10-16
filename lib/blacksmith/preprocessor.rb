@@ -3,20 +3,21 @@ module Blacksmith
 
     class << self
 
-      def get_file(path)
-        File.open("#{Blacksmith.app.root}#{path}.js")
+      def get_file(filename)
+        File.open("#{Blacksmith.config.source_folder}/#{filename}.js")
       end
 
 
-      def proccess(file)
+      def proccess(filename)
+        file = get_file(filename)
         input_file = file.readlines
         output = input_file.map { |line|
           if line =~ /\/\/#/
             #line.gsub!(/\/\/#/, '').strip!
             case line
             when /include/
-              include_arg = line.match(/include\s+(.*)/)[1].strip
-              Preprocessor.proccess(get_file(include_arg))
+              included_filename = line.match(/include\s+(.*)/)[1].strip
+              proccess(included_filename)
             when /insert/
               include_arg = line.match(/insert\s+(.*)/)[1].strip
               get_file(include_arg).read

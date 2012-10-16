@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n")
   s.homepage    = 'http://varlamoved.ru/blacksmith'
   s.executables << 'blacksmith'
-  s.add_dependency("listen", ["~> 0.4.7"])
+  s.add_dependency("listen", ["~> 0.5.3"])
+  s.add_dependency("uglifier", ["~> 1.3.0"])
 end
 

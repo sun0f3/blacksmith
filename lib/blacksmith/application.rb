@@ -1,3 +1,6 @@
+require 'uglifier'
+#require 'gzip'
+
 module Blacksmith
   class Application
 
@@ -16,10 +19,10 @@ module Blacksmith
           output = Uglifier.compile(output)
         end
 
-        output_file = File.new(output_filename_helper(file), 'w')
+        output_file = File.new(output_filename_helper(f), 'w')
         output_file.write(output)
-        output_file_gzip = File.new(output_filename_helper(file, :gzip => true), 'w')
-        output_file_gzip.write(output.gzip)
+        #output_file_gzip = File.new(output_filename_helper(file, :gzip => true), 'w')
+        #output_file_gzip.write(output.gzip)
       end
     end
 
