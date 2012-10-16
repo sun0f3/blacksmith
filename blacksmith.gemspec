@@ -1,6 +1,6 @@
 require File.expand_path("../lib/version.rb", __FILE__)
 Gem::Specification.new do |s|
-  s.name        = 'blacksmith'
+  s.name        = 'blacksmith-js'
   s.version     =  Blacksmith::VERSION
   s.date        = '2012-10-14'
   s.summary     = "build js library, extensions with blacksmith"
