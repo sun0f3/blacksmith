@@ -1,6 +1,6 @@
 module Blacksmith
   class Configure
-    attr_accessor :build_files
+    attr_accessor :build_files, :jshint, :gzip, :compile
 
     def initialize
       exec_config_file
@@ -11,7 +11,7 @@ module Blacksmith
       instance_variable_set(:"@#{k}", v)
     end
 
-    def exec_config_file(&block)
+    def exec_config_file
       instance_eval(File.read(File.join(Dir.pwd, 'config.rb')))
     end
 

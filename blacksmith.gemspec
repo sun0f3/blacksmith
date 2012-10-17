@@ -12,5 +12,7 @@ Gem::Specification.new do |s|
   s.executables << 'blacksmith'
   s.add_dependency("listen", ["~> 0.5.3"])
   s.add_dependency("uglifier", ["~> 1.3.0"])
+  s.add_dependency("gzip")
+  s.add_dependency("jshintrb")
 end
 
